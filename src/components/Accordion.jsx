@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 
-const Accordion = () => {
+const Accordion = ({ title, place, content }) => {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef(null);
 
@@ -17,23 +17,32 @@ const Accordion = () => {
   }, [isOpen]);
 
   return (
-    <div className="flex w-[90%] flex-col">
+    <div className="flex flex-col py-2">
       <div
         onClick={toggleAccordion}
-        className="mb-3 mt-1 cursor-pointer list-none border-y-2 border-black py-2 text-3xl font-medium"
+        className={
+          place === "top"
+            ? "mx-auto w-fit cursor-pointer list-none rounded-lg border-b-4 border-[#FF6D60] px-3 text-2xl font-medium"
+            : "hidden"
+        }
       >
-        Accordion
+        {title}
       </div>
       <div
         ref={contentRef}
-        className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+        className="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
       >
-        <p className="p-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio neque
-          dolor magnam quo atque inventore? Libero dolorem sunt quasi iste
-          obcaecati recusandae quis provident itaque, reprehenderit quaerat?
-          Incidunt, commodi culpa?
-        </p>
+        <p className="mx-auto w-1/2 py-4">{content}</p>
+      </div>
+      <div
+        onClick={toggleAccordion}
+        className={
+          place === "bottom"
+            ? "mx-auto w-fit cursor-pointer list-none rounded-lg border-b-4 border-black px-3 py-1 text-2xl font-medium"
+            : "hidden"
+        }
+      >
+        {title}
       </div>
     </div>
   );
