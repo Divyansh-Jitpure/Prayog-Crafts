@@ -14,7 +14,7 @@ const Footer = () => {
           />
         </a>
         <p class="mt-4 text-sm text-gray-500 sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-black sm:py-2 sm:pl-4">
-          © 2020 Prayog Crafts —
+          © 2024 Prayog Crafts —
           <a
             href="#"
             class="ml-1 text-gray-600"

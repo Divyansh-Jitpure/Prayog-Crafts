@@ -28,25 +28,25 @@ const Products = () => {
         <div class="-m-4 flex flex-wrap">
           <Product
             item="ABC"
-            category="Crafts"
+            category="Art & Crafts"
             price={200}
             imgSrc="/PrayogCraftsHero.jpg"
           />
           <Product
             item="ABC"
-            category="Crafts"
+            category="Art & Crafts"
             price={210}
             imgSrc="/PrayogCraftsHero.jpg"
           />
           <Product
             item="ABC"
-            category="Crafts"
+            category="Art & Crafts"
             price={220}
             imgSrc="/PrayogCraftsHero.jpg"
           />
           <Product
             item="ABC"
-            category="Crafts"
+            category="Art & Crafts"
             price={230}
             imgSrc="/PrayogCraftsHero.jpg"
           />
