@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className="body-font text-gray-600">
-      <div className="top-0 mx-auto flex w-full flex-col flex-wrap items-center bg-white md:fixed md:flex-row">
+    <header className="body-font sticky top-0 bg-[#98D8AA] text-gray-600">
+      <div className="mx-auto flex w-full flex-col flex-wrap items-center md:flex-row">
         <a className="title-font mb-4 ml-4 flex items-center font-medium text-gray-900 md:mb-0">
-          <img className="h-[70px] w-[70px]" src="/logo.png" alt="logo" />
+          <img
+            className="h-[70px] w-[70px]"
+            src="/logoTransparent.png"
+            alt="logo"
+          />
           {/* <span className="ml-3 text-xl">Tailblocks</span> */}
         </a>
         <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto">
