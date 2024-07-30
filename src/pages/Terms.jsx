@@ -4,7 +4,7 @@ import Accordion from "../components/Accordion";
 const Terms = () => {
   return (
     <div>
-      <h1 className="my-2 text-center text-3xl font-medium text-[#F6C8A5]">
+      <h1 className="my-2 text-center text-3xl font-medium">
         Terms & Conditions
       </h1>
       <p className="mx-auto mb-5 w-1/2 text-center text-lg">
