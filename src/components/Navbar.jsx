@@ -22,7 +22,7 @@ const Navbar = () => {
         <nav
           className={
             !isOpen
-              ? "absolute left-0 top-[-200%] flex min-h-[30vh] w-full flex-col items-center justify-around bg-[#98D8AA] text-base md:static md:ml-auto md:mr-auto md:min-h-fit md:w-auto md:flex-row md:bg-transparent"
+              ? "absolute left-0 top-[-300%] flex min-h-[30vh] w-full flex-col items-center justify-around bg-[#98D8AA] text-base md:static md:ml-auto md:mr-auto md:min-h-fit md:w-auto md:flex-row md:bg-transparent"
               : "absolute left-0 top-[100%] flex min-h-[30vh] w-full flex-col items-center justify-around bg-[#98D8AA] text-base md:static md:ml-auto md:mr-auto md:min-h-fit md:w-auto md:flex-row md:bg-transparent"
           }
         >
