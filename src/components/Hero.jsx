@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <div class="container mx-auto flex flex-col items-center px-5 py-12 md:flex-row">
+    <div class="container mx-auto flex flex-col items-center bg-[#FFF1DB] px-5 py-12 md:flex-row">
       {/* Hreo Left Section */}
       <div class="mb-10 w-5/6 md:mb-0 md:w-1/2 lg:w-full lg:max-w-lg">
         <img
