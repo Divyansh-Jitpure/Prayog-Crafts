@@ -2,20 +2,24 @@ import React from "react";
 
 const Product = ({ category, item, price, imgSrc }) => {
   return (
-    <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-      <a class="block h-48 overflow-hidden rounded">
+    <div className="w-full p-4 md:w-1/2 lg:w-1/4">
+      <a className="block h-48 overflow-hidden rounded">
         <img
-          alt="ecommerce"
-          class="block h-full w-full object-cover object-center"
-          src={!imgSrc ? "https://dummyimage.com/420x260" : imgSrc}
+          alt="Product"
+          className="block h-full w-full object-cover object-center"
+          src={
+            !imgSrc
+              ? "https://dummyimage.com/600x400/000/fff&text=Prayog+Craft"
+              : imgSrc
+          }
         />
       </a>
-      <div class="mt-4">
-        <h3 class="title-font mb-1 text-xs tracking-widest text-gray-500">
+      <div className="mt-4">
+        <h3 className="title-font mb-1 text-xs tracking-widest text-gray-500">
           {category}
         </h3>
-        <h2 class="title-font text-lg font-medium text-gray-900">{item}</h2>
-        <p class="mt-1">{price}₹</p>
+        <h2 className="title-font text-lg font-medium text-gray-900">{item}</h2>
+        <p className="mt-1">{price}₹</p>
       </div>
     </div>
   );
@@ -23,9 +27,9 @@ const Product = ({ category, item, price, imgSrc }) => {
 
 const Products = () => {
   return (
-    <section class="body-font text-gray-600">
-      <div class="container mx-auto px-5 py-12">
-        <div class="-m-4 flex flex-wrap">
+    <section className="body-font text-gray-600">
+      <div className="container mx-auto px-5 py-12">
+        <div className="-m-4 flex flex-wrap">
           <Product
             item="ABC"
             category="Art & Crafts"
