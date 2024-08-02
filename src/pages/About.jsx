@@ -3,7 +3,7 @@ import { FaQuoteRight } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div className="my-4 flex flex-col items-center text-center">
+    <div className="mx-4 my-4 flex flex-col items-center text-center md:mx-auto md:w-1/2">
       <FaQuoteRight className="h-8 w-8 text-gray-400" />
       <h2 className="my-2 text-2xl font-medium">
         Empowering Minds through Hands-On Learning
