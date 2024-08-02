@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
 import { FaArrowRight } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="sticky top-0 flex h-fit w-full items-center justify-between bg-[#98D8AA] px-4 sm:px-8">
       {/* Left "LOGO" */}
-      <img className="w-20" src="/logo.png" alt="logo" />
+
+      <img
+        onClick={() => navigate("/")}
+        className="w-20 cursor-pointer"
+        src="/logo.png"
+        alt="logo"
+      />
       {/* Right */}
       <div className="hidden items-center sm:flex">
         <Link
