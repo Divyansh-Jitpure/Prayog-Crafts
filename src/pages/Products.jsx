@@ -1,9 +1,15 @@
 import React from "react";
+import { ProductData } from "../ProductData";
+import { useNavigate } from "react-router-dom";
 
-const Product = ({ category, item, price, imgSrc }) => {
+const Product = ({ category, item, price, imgSrc, itemKey }) => {
+  const navigate = useNavigate();
   return (
-    <div className="w-full p-4 md:w-1/2 lg:w-1/4">
-      <a className="block h-48 overflow-hidden rounded">
+    <div
+      onClick={() => navigate("/products/" + item, { state: itemKey + 1 })}
+      className="w-full cursor-pointer p-4 md:w-1/2 lg:w-1/4"
+    >
+      <div className="block h-48 overflow-hidden rounded">
         <img
           alt="Product"
           className="block h-full w-full object-cover object-center"
@@ -13,13 +19,13 @@ const Product = ({ category, item, price, imgSrc }) => {
               : imgSrc
           }
         />
-      </a>
+      </div>
       <div className="mt-4">
         <h3 className="title-font mb-1 text-xs tracking-widest text-gray-500">
           {category}
         </h3>
         <h2 className="title-font text-lg font-medium text-gray-900">{item}</h2>
-        <p className="mt-1">{price}₹</p>
+        <p className="mt-1">₹ {price}</p>
       </div>
     </div>
   );
@@ -30,30 +36,18 @@ const Products = () => {
     <section className="body-font text-gray-600">
       <div className="container mx-auto px-5 py-12">
         <div className="-m-4 flex flex-wrap">
-          <Product
-            item="ABC"
-            category="Art & Crafts"
-            price={200}
-            imgSrc="/PrayogCraftsHero.jpg"
-          />
-          <Product
-            item="ABC"
-            category="Art & Crafts"
-            price={210}
-            imgSrc="/PrayogCraftsHero.jpg"
-          />
-          <Product
-            item="ABC"
-            category="Art & Crafts"
-            price={220}
-            imgSrc="/PrayogCraftsHero.jpg"
-          />
-          <Product
-            item="ABC"
-            category="Art & Crafts"
-            price={230}
-            imgSrc="/PrayogCraftsHero.jpg"
-          />
+          {ProductData.map((product, index) => {
+            return (
+              <Product
+                key={index}
+                itemKey={index}
+                item={product.item}
+                category={product.category}
+                price={product.price}
+                imgSrc={product.imgSrc}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
