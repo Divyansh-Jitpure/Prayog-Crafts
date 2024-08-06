@@ -7,9 +7,11 @@ const ProductDetails = () => {
   const itemKey = useLocation().state - 1;
 
   return (
-    <div className="container mx-auto mt-10 flex justify-evenly">
-      <ProductImages itemKey={itemKey} />
-      <ProductBody itemKey={itemKey} />
+    <div className="">
+      <div className="container mx-auto flex flex-col items-center justify-evenly sm:mt-8 sm:flex-row sm:items-start">
+        <ProductImages itemKey={itemKey} />
+        <ProductBody itemKey={itemKey} />.
+      </div>
     </div>
   );
 };

@@ -21,11 +21,14 @@ const Product = ({ category, item, price, imgSrc, itemKey }) => {
         />
       </div>
       <div className="mt-4">
-        <h3 className="title-font mb-1 text-xs tracking-widest text-gray-500">
-          {category}
-        </h3>
-        <h2 className="title-font text-lg font-medium text-gray-900">{item}</h2>
-        <p className="mt-1">₹ {price}</p>
+        <h3 className="title-font text-xs text-gray-500">{category}</h3>
+        <h2 className="title-font text-xl font-medium text-gray-900">{item}</h2>
+        <p className="flex text-xl font-medium">
+          ₹ {ProductData[itemKey].price}
+          <span className="ml text-sm font-extralight text-blue-700">
+            {ProductData[itemKey].discount}% off
+          </span>
+        </p>
       </div>
     </div>
   );

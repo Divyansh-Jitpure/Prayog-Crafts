@@ -3,9 +3,9 @@ import { ProductData } from "../../ProductData";
 
 const ProductImages = ({ itemKey }) => {
   return (
-    <div className="fixed left-16 w-[400px]">
+    <div className="my-6 sm:sticky sm:top-20 sm:z-[-1] sm:my-0 sm:pt-2">
       <img
-        className="w-[500px]"
+        className="w-[300px] sm:w-[500px]"
         src={ProductData[itemKey].imgSrc}
         alt="ProductImage"
       />

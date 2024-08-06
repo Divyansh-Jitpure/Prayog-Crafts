@@ -1,19 +1,26 @@
 import React from "react";
 import { ProductData } from "../../ProductData";
-import { IoStar, IoStarHalf } from "react-icons/io5";
+import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 
 const ProductBody = ({ itemKey }) => {
   return (
-    <div className="ml-[410px] w-[700px]">
+    <div className="mx-3 sm:w-[700px] sm:pt-2">
+      <p className="text-sm text-gray-500">{ProductData[itemKey].category}</p>
       <h2 className="mb-2 text-2xl">{ProductData[itemKey].item}</h2>
 
-      <span className="flex items-center">
-        <span className="text-sm">4.5</span>
-        <IoStar className="ml-1 text-blue-400" />
-        <IoStar className="text-blue-400" />
-        <IoStar className="text-blue-400" />
-        <IoStar className="text-blue-400" />
-        <IoStarHalf className="text-blue-400" />
+      <span className="flex">
+        <span className="mr-1 text-sm">{ProductData[itemKey].rating.rate}</span>
+        <span className="flex items-center">
+          {ProductData[itemKey].rating.stars.map((star, index) => {
+            return star === 1 ? (
+              <IoStar key={index} className="ml-1 text-blue-400" />
+            ) : star === 0 ? (
+              <IoStarOutline key={index} className="ml-1 text-blue-400" />
+            ) : (
+              <IoStarHalf key={index} className="ml-1 text-blue-400" />
+            );
+          })}
+        </span>
       </span>
 
       <hr className="my-2 border-t-2" />
@@ -21,14 +28,18 @@ const ProductBody = ({ itemKey }) => {
       <p className="flex text-2xl font-medium">
         ₹ {ProductData[itemKey].price}
         <span className="ml text-lg font-extralight text-blue-700">
-          10% off
+          {ProductData[itemKey].discount}% off
         </span>
       </p>
 
       <span className="text-sm font-extralight">
-        MRP <del>₹2000</del> <br />
+        MRP <del>₹{ProductData[itemKey].mrp}</del> <br />
         <span className="font-normal">Inclusive of all taxes</span>
       </span>
+      <br />
+      <button className="my-2 rounded-lg bg-[#FF6D60] px-2 py-1 active:bg-[#ff4b3b] sm:hover:bg-[#ff4b3b]">
+        Buy Now
+      </button>
 
       <hr className="my-2 border-t-2" />
 
@@ -37,7 +48,7 @@ const ProductBody = ({ itemKey }) => {
       <table className="">
         <tr>
           <td className="w-32">Size</td>
-          <td>12 In 1</td>
+          <td>{ProductData[itemKey].specs.size}</td>
         </tr>
         <tr>
           <td>Kit Name</td>
@@ -45,36 +56,21 @@ const ProductBody = ({ itemKey }) => {
         </tr>
         <tr>
           <td>Theme</td>
-          <td>Something, etc.</td>
+          <td>{ProductData[itemKey].specs.theme}</td>
         </tr>
         <tr>
           <td>Age Range</td>
-          <td>Kids, Teenagers</td>
+          <td>{ProductData[itemKey].specs.ageRange}</td>
         </tr>
         <tr>
           <td>In The Box</td>
-          <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus,
-            optio.
-          </td>
+          <td>{ProductData[itemKey].specs.inTheBox}</td>
         </tr>
       </table>
       <hr className="my-2 border-t-2" />
       <h3 className="mb-3 text-xl font-medium">Product Details</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat,
-        praesentium. Porro nesciunt minus soluta reprehenderit ex odio ducimus
-        veritatis quidem maiores culpa quos, similique quo, neque, dolorum
-        possimus assumenda repellat earum obcaecati itaque repudiandae. Ducimus
-        dolor maiores magni facilis, beatae eius tempora corrupti sunt itaque
-        labore sequi optio, vitae dignissimos blanditiis totam nostrum officia
-        modi, molestiae qui laborum sapiente laboriosam quos vero vel. Obcaecati
-        blanditiis pariatur saepe deleniti quasi! Tempore praesentium expedita
-        accusantium pariatur fugit voluptatibus esse et, sint facere architecto
-        dicta libero officia eius perferendis, fugiat aperiam nihil quo ipsam
-        atque! Ducimus, nemo. Quia vero quaerat ut non ab.
-      </p>
-      <hr className="mb-5 mt-2 border-t-2" />
+      <p className="mb-3">{ProductData[itemKey].description}</p>
+      {/* <hr className="mb-5 mt-2 border-t-2" /> */}
     </div>
   );
 };
