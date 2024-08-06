@@ -7,7 +7,7 @@ const Terms = () => {
       <h1 className="my-2 text-center text-3xl font-medium">
         Terms & Conditions
       </h1>
-      <p className="mx-auto mb-5 w-1/2 text-center text-lg">
+      <p className="mx-2 mb-5 text-center text-lg sm:mx-auto sm:w-1/2">
         By proceeding with your purchase, you acknowledge that you have read,
         understood, and agreed to these terms and conditions.
       </p>

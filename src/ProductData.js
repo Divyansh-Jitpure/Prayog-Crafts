@@ -41,7 +41,7 @@ export const ProductData = [
     mrp: 500,
     discount: 10,
     price: 450,
-    rating: { rate: "3.0", stars: [1, 1, 1, 0, 0] },
+    rating: { rate: "4.0", stars: [1, 1, 1, 1, 0] },
     specs: {
       size: "10 in 1",
       kitName: "Product02",

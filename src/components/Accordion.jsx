@@ -22,7 +22,7 @@ const Accordion = ({ title, place, content }) => {
         onClick={toggleAccordion}
         className={
           place === "top"
-            ? "mx-auto w-fit cursor-pointer list-none rounded-lg border-b-4 border-gray-400 px-3 text-2xl font-medium"
+            ? "mx-auto w-fit cursor-pointer list-none rounded-lg border-b-4 border-gray-400 px-3 text-center text-2xl font-medium"
             : "hidden"
         }
       >
