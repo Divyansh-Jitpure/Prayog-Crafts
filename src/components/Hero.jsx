@@ -31,7 +31,7 @@ const Hero = () => {
               onClick={() => navigate("/products")}
               className="inline-flex items-center rounded border-0 bg-red-500 px-4 py-2 text-lg text-white hover:bg-red-600 focus:outline-none"
             >
-              Button
+              Products
               <FaArrowRight className="ml-2" />
             </button>
           </div>
