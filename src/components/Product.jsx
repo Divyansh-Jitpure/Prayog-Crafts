@@ -3,29 +3,41 @@ import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { ProductData } from "../ProductData";
 
-const Product = ({ category, item, imgSrc, itemKey }) => {
+const Product = ({ itemKey }) => {
   const navigate = useNavigate();
   return (
-    <div className="mx-1 my-1 w-full border-2 p-4 md:w-1/2 lg:w-1/4 shadow-xl rounded">
+    <div className="mx-1 my-1 w-full rounded border-2 p-4 shadow-xl md:w-1/2 lg:w-1/4">
       <div className="block h-48 overflow-hidden rounded">
         <img
-          onClick={() => navigate("/products/" + item, { state: itemKey + 1 })}
+          onClick={() =>
+            ProductData[itemKey].imgSrc &&
+            navigate("/products/" + ProductData[itemKey].item, {
+              state: itemKey + 1,
+            })
+          }
           alt="Product"
           className="block h-full w-full cursor-pointer object-cover object-center"
           src={
-            !imgSrc
-              ? "https://dummyimage.com/600x400/000/fff&text=Prayog+Craft"
-              : imgSrc
+            !ProductData[itemKey].imgSrc
+              ? "/ComingSoon.png"
+              : ProductData[itemKey].imgSrc
           }
         />
       </div>
       <div className="mt-4">
-        <h3 className="title-font text-xs text-gray-500">{category}</h3>
+        <h3 className="title-font text-xs text-gray-500">
+          {ProductData[itemKey].category}
+        </h3>
         <h2
-          onClick={() => navigate("/products/" + item, { state: itemKey + 1 })}
+          onClick={() =>
+            ProductData[itemKey].imgSrc &&
+            navigate("/products/" + ProductData[itemKey].item, {
+              state: itemKey + 1,
+            })
+          }
           className="title-font w-fit cursor-pointer text-xl font-medium text-gray-900"
         >
-          {item}
+          {ProductData[itemKey].item}
         </h2>
 
         <div className="flex items-start justify-between">
