@@ -2,11 +2,12 @@ import React from "react";
 import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { ProductData } from "../ProductData";
+import StarRating from "./StarRating";
 
 const Product = ({ itemKey }) => {
   const navigate = useNavigate();
   return (
-    <div className="mx-1 my-1 w-full rounded border-2 p-4 shadow-xl md:w-1/2 lg:w-1/4">
+    <div className="mx-1 my-1 w-full rounded border p-4 shadow-xl md:w-1/2 lg:w-1/4">
       <div className="block h-48 overflow-hidden rounded">
         <img
           onClick={() =>
@@ -53,18 +54,8 @@ const Product = ({ itemKey }) => {
             </span>
           </div>
           <span className="flex">
-            <span className="mr-1">{ProductData[itemKey].rating.rate}</span>
-            <span className="flex items-center">
-              {ProductData[itemKey].rating.stars.map((star, index) => {
-                return star === 1 ? (
-                  <IoStar key={index} className="ml-1 text-blue-400" />
-                ) : star === 0 ? (
-                  <IoStarOutline key={index} className="ml-1 text-blue-400" />
-                ) : (
-                  <IoStarHalf key={index} className="ml-1 text-blue-400" />
-                );
-              })}
-            </span>
+            <span className="mr-1">{ProductData[itemKey].rating}</span>
+            <StarRating itemKey={itemKey} />
           </span>
         </div>
       </div>

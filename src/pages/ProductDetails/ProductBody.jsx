@@ -1,6 +1,6 @@
 import React from "react";
 import { ProductData } from "../../ProductData";
-import { IoStar, IoStarHalf, IoStarOutline } from "react-icons/io5";
+import StarRating from "../../components/StarRating";
 
 const ProductBody = ({ itemKey }) => {
   return (
@@ -9,18 +9,8 @@ const ProductBody = ({ itemKey }) => {
       <h2 className="mb-2 text-2xl">{ProductData[itemKey].item}</h2>
 
       <span className="flex">
-        <span className="mr-1 text-sm">{ProductData[itemKey].rating.rate}</span>
-        <span className="flex items-center">
-          {ProductData[itemKey].rating.stars.map((star, index) => {
-            return star === 1 ? (
-              <IoStar key={index} className="ml-1 text-blue-400" />
-            ) : star === 0 ? (
-              <IoStarOutline key={index} className="ml-1 text-blue-400" />
-            ) : (
-              <IoStarHalf key={index} className="ml-1 text-blue-400" />
-            );
-          })}
-        </span>
+        <span className="mr-1 text-sm">{ProductData[itemKey].rating}</span>
+        <StarRating itemKey={itemKey} />
       </span>
 
       <hr className="my-2 border-t-2" />
@@ -55,8 +45,8 @@ const ProductBody = ({ itemKey }) => {
           <td>{ProductData[itemKey].item}</td>
         </tr>
         <tr>
-          <td>Theme</td>
-          <td>{ProductData[itemKey].specs.theme}</td>
+          <td>Application</td>
+          <td>{ProductData[itemKey].specs.application}</td>
         </tr>
         <tr>
           <td>Age Range</td>
@@ -69,7 +59,8 @@ const ProductBody = ({ itemKey }) => {
       </table>
       <hr className="my-2 border-t-2" />
       <h3 className="mb-3 text-xl font-medium">Product Details</h3>
-      <p className="mb-3">{ProductData[itemKey].description}</p>
+      <p className="mb-3">{ProductData[itemKey].description.content}</p>
+      {/* <pre className="mb-3">{ProductData[itemKey].description.moreData}</pre> */}
       {/* <hr className="mb-5 mt-2 border-t-2" /> */}
     </div>
   );

@@ -7,6 +7,7 @@ import Terms from "./pages/Terms";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import BuyNow from "./pages/BuyNow";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/ourteam" element={<OurTeam />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/buynow" element={<BuyNow />} />
         </Routes>
         <Footer />
       </Router>
