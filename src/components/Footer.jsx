@@ -30,7 +30,7 @@ const Footer = () => {
           target="_blank"
           href="https://www.instagram.com/jitpureparas/"
         >
-          @Paras Jitpure
+          @Paras Jit
         </a>
         <a
           className="ml-1 text-gray-600"

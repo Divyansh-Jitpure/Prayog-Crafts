@@ -6,7 +6,7 @@ import { ProductData } from "../ProductData";
 const Product = ({ category, item, imgSrc, itemKey }) => {
   const navigate = useNavigate();
   return (
-    <div className="mx-1 my-1 w-full border-2 p-4 md:w-1/2 lg:w-1/4">
+    <div className="mx-1 my-1 w-full border-2 p-4 md:w-1/2 lg:w-1/4 shadow-xl rounded">
       <div className="block h-48 overflow-hidden rounded">
         <img
           onClick={() => navigate("/products/" + item, { state: itemKey + 1 })}
