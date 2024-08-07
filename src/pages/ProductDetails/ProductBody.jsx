@@ -1,8 +1,10 @@
 import React from "react";
 import { ProductData } from "../../ProductData";
 import StarRating from "../../components/StarRating";
+import { useNavigate } from "react-router-dom";
 
 const ProductBody = ({ itemKey }) => {
+  const navigate = useNavigate();
   return (
     <div className="mx-3 sm:w-[700px] sm:pt-2">
       <p className="text-sm text-gray-500">{ProductData[itemKey].category}</p>
@@ -27,7 +29,10 @@ const ProductBody = ({ itemKey }) => {
         <span className="font-normal">Inclusive of all taxes</span>
       </span>
       <br />
-      <button className="my-2 rounded-lg bg-[#FF6D60] px-2 py-1 active:bg-[#ff4b3b] sm:hover:bg-[#ff4b3b]">
+      <button
+        onClick={() => navigate("/buynow")}
+        className="my-2 rounded-lg bg-[#FF6D60] px-2 py-1 active:bg-[#ff4b3b] sm:hover:bg-[#ff4b3b]"
+      >
         Buy Now
       </button>
 
